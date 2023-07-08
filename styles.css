@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8cc461;
+}
+#scoreContainer {
+  max-width: 100%;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+  margin-top: 3rem;
+  padding: 10px 25px;
+  color: #ffffff;
+}
+#logo {
+  font-size: 30px;
+  line-height: 46px;
+  font-weight: 600;
+}
+
+#scoreComputer {
+  text-align: center;
+  background-color: #ffffff;
+  color: #656565;
+  padding: 20px;
+  margin-left: 240px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 19px;
+}
+#scoreComputer p {
+  color: #252525;
+  font-size: 60px;
+  line-height: 75px;
+}
+#scoreHuman {
+  text-align: center;
+  background-color: #ffffff;
+  color: #656565;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 19px;
+  margin-left: 30px;
+}
+#scoreHuman p {
+  color: #252525;
+  font-size: 60px;
+  line-height: 75px;
+}
+
+.option {
+  max-width: 100%;
+  width: 700px;
+  min-height: 49vh;
+  display: grid;
+  place-content: center;
+  position: relative;
+  padding-top: 16%;
+}
+#rotate {
+  transform: rotate(3.142rad);
+  width: 300px;
+  opacity: 60%;
+}
+.con {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 18px;
+  position: absolute;
+  cursor: pointer;
+}
+.computer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 18px;
+  position: absolute;
+  display: none;
+}
+.rock {
+  background: #0074b6;
+  left: 9em;
+  top: 15%;
+}
+.scissor {
+  background: #bd00ff;
+  left: 17rem;
+  top: 70%;
+}
+.paper {
+  background: #ffa943;
+  right: 9rem;
+  top: 15%;
+}
+
+.item {
+  background: #eee;
+  height: 100%;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+/* .game-con {
+  width: 100%;
+  min-height: 49vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.info {
+  width: 700px;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0 0;
+}
+.user,
+.machine {
+  /* opacity: 0; */
+/* color: #fff;
+  font-size: 17px;
+  line-height: 19;
+  font-weight: 600;
+} */
+.btn-div {
+  width: 150%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 4rem 0rem 0;
+}
+.btn-rule {
+  background: transparent;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px 22px;
+  border-radius: 15px;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+}
+.rule-model {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 30%;
+  left: 74%;
+
+  display: none;
+}
+/* .rule-model::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+} */
+.rule-img {
+  transform: translateY(-200%);
+  transition: all 0.4s ease;
+}
+.close {
+  background: #ff0000;
+  padding: 15px 22px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  cursor: pointer;
+  position: relative;
+  left: 15rem;
+  top: 1rem;
+}
+.win-model {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 15%;
+  right: 0rem;
+  text-align: center;
+  display: none;
+}
+
+win-model::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.6;
+}
+.winner,
+.play {
+  z-index: 1;
+}
+.winner {
+  color: #ffffff;
+  padding-bottom: 1rem;
+}
+.winner h1 {
+  font-size: 39px;
+  line-height: 45px;
+  font-weight: 800;
+}
+.winner h3 {
+  font-size: 25px;
+  line-height: 29px;
+  font-weight: 800;
+}
+.play {
+  background: #eee;
+  letter-spacing: 3px;
+  color: #6b6b6b;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 17px;
+}
+.show {
+  left: 6em;
+  top: 40%;
+}
+.right {
+  left: 29rem;
+  top: 40%;
+}
