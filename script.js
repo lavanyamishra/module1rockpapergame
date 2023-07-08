@@ -12,6 +12,7 @@ let scoreHelement = document.getElementById("scoreh");
 let rulebtn = document.querySelector(".btn-rule");
 let rulemodel = document.querySelector(".rule-model");
 let ruleimage = document.querySelector(".rule-img");
+
 if (scoreComputer) {
   scoreCelement.innerText = scoreComputer;
 }
@@ -38,6 +39,7 @@ con.forEach((element, index) => {
       if (random == index) {
         winModel.style.display = "flex";
         winner.innerText = "TIE UP";
+
         play.innerText = "REPLAY";
       } else if (
         (index == 0 && random == 1) ||
@@ -46,22 +48,28 @@ con.forEach((element, index) => {
       ) {
         winModel.style.display = "flex";
         winner.innerText = "YOU WIN";
+
+        // index.classList.add("winshow");
         countHum = scoreHuman;
-        countHum++;
+        countHum += 1;
         scoreHelement.innerText = countHum;
-        localStorage.setItem("score", JSON.stringify(countHum));
+        localStorage.setItem("scoreHuman", JSON.stringify(countHum));
       } else {
         winModel.style.display = "flex";
         winner.innerText = "YOU LOST";
-        countCom++;
+        countCom = scoreComputer;
+        countCom += 1;
         scoreCelement.innerText = countCom;
-        localStorage.setItem("score", JSON.stringify(countCom));
+        localStorage.setItem("scoreComputer", JSON.stringify(countCom));
+      }
+      if (countHum == 3 && countCom < 3) {
+        window.open("result.html", "_blank");
       }
     }, 1500);
   });
 });
 play.addEventListener("click", () => {
-  window.location.reload();
+  window.location.reload("index.html");
 });
 
 rulebtn.addEventListener("click", () => {
@@ -78,3 +86,7 @@ closebtn.addEventListener("click", () => {
     rulemodel.style.display = "none";
   }, 1000);
 });
+
+function playagain() {
+  window.open("index.html");
+}
